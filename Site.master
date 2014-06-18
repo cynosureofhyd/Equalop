@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-47969425-1', 'equalop.org');
+        ga('send', 'pageview');
+
+    </script>
+
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page" style="height:100%">
+        <div class="header">
+          <!--  <div class="title">
+                <h1>
+                    Equal Op
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>-->
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                        <asp:MenuItem Text="About">
+                            <asp:MenuItem NavigateUrl="~/About.aspx" Text="Our Organization"/>
+                            <asp:MenuItem NavigateUrl="~/Team.aspx" Text="Our Team"/>
+                        </asp:MenuItem>
+                     
+                        <asp:MenuItem Text="Students">
+                            <asp:MenuItem NavigateUrl="~/Resources.aspx" Text="Online Resources"/>
+                            <asp:MenuItem NavigateUrl="~/PrerequisitesForStudents.aspx" Text="Register for Classes"/>
+                            <asp:MenuItem NavigateUrl="~/ClassSchedule.aspx" Text="Class Schedule"/>
+                        </asp:MenuItem>
+
+                        <asp:MenuItem Text="Get Involved">
+                            <asp:MenuItem NavigateUrl="~/VolunteersApplication.aspx" Text="Step Up to Teach"/>
+                            <asp:MenuItem NavigateUrl="~/InterestedSchools.aspx" Text="For Schools"/>
+                      
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Testimonials.aspx" Text="Testimonials"/>
+                        <asp:MenuItem NavigateUrl="~/ContactUs.aspx" Text="Contact Us"/>
+                   
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+   <div id="footer" style="clear:both;text-align:center;" >
+Copyright © Equalop.org</div>
+
+    </form>
+</body>
+</html>
